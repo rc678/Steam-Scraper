@@ -1,5 +1,8 @@
-/*class contains information on games found in steam store*/
-public class Game {
+/**
+ * class contains information on games found in steam store
+ */
+public class Game
+{
     String _appID;
     String _name;
     String _date;
@@ -11,9 +14,19 @@ public class Game {
     String _rating;
     String _ratingDescription;
 
-    //constructor represents steam store db in ER diagram
+    /**
+     *
+     * @param appID
+     * @param gameName
+     * @param date
+     * @param discount
+     * @param originalPrice
+     * @param currentPrice
+     * @param photoUrl
+     */
     public Game(String appID, String gameName, String date, String discount,
-                String originalPrice, String currentPrice, String photoUrl) {
+                String originalPrice, String currentPrice, String photoUrl)
+    {
         this._appID = appID;
         this._name = gameName;
         this._date = date;
@@ -38,8 +51,6 @@ public class Game {
         this._name = gameName;
         this._date = releaseDate;
     }
-
-
 */
     public String getAppID() {
         return _appID;
@@ -120,7 +131,4 @@ public class Game {
     public void setRatingDescription(String ratingDescription) {
         this._ratingDescription = ratingDescription;
     }
-
-
-
 }
