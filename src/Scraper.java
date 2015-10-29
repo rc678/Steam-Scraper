@@ -57,13 +57,8 @@ public class Scraper
             String review = ratingElems.attr("data-store-tooltip");
 
             //System.out.println(appIdElems.attr("data-ds-appid"));
-            //System.out.println(appIdElems.toArray().length);
-            Elements results = doc.getElementsByClass("search_result_row");
-            for(Element e: results);
-            {
-                String appid = results.attr("data-ds-appid");
-                System.out.println(appid);
-            }
+            //System.out.println(appIdElems.attr("href"));
+
             /*creates Game objects for all game information on page*/
             createGameObjectsonPage(gameNameElems, releaseDateElems, appIdElems, photoUrlElems, ratingElems);
         }
@@ -89,6 +84,11 @@ public class Scraper
     private static Elements getAppId(Document webpage)
     {
         Elements appId = webpage.select("#search_result_container a");
+        //System.out.println(appId.attr("data-ds"));
+        for(Element a: appId)
+        {
+            System.out.println(a.attr("data-ds-appid"));
+        }
         return appId;
     }
 

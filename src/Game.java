@@ -35,23 +35,23 @@ public class Game
         this._price = currentPrice;
         this._photoUrl = photoUrl;
     }
-/*
-    //represents game details in ER diagram
-    public Game(String appID, String gameName, String releaseDate) {
+    /*
+        //represents game details in ER diagram
+        public Game(String appID, String gameName, String releaseDate) {
 
-        this._appID = appID;
-        this._name = gameName;
-        this._date = releaseDate;
-    }
+            this._appID = appID;
+            this._name = gameName;
+            this._date = releaseDate;
+        }
 
-    //represents game details in ER diagram
-    public Game(String appID, String gameName, String releaseDate) {
+        //represents game details in ER diagram
+        public Game(String appID, String gameName, String releaseDate) {
 
-        this._appID = appID;
-        this._name = gameName;
-        this._date = releaseDate;
-    }
-*/
+            this._appID = appID;
+            this._name = gameName;
+            this._date = releaseDate;
+        }
+    */
     public String getAppID() {
         return _appID;
     }
