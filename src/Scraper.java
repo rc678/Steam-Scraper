@@ -9,12 +9,13 @@ import org.jsoup.select.Elements;
 import javax.print.Doc;
 
 /**
- * class is responsible for scraping steam web page
+ * class Scraper is responsible for scraping steam web page
  */
 public class Scraper
 {
-    ArrayList<Game> steamStore = new ArrayList<Game>();
+    private ArrayList<Game> steamStore = new ArrayList<Game>();
     //ArrayList<Elements> titles = new ArrayList<Elements>();
+    private Game currGame;
 
     public static void main(String[] args) throws IOException
     {
@@ -27,17 +28,16 @@ public class Scraper
         Document doc = Jsoup.connect("http://store.steampowered.com/search/").get();
 
         /*retrieving Elements of all relevent information for initial page.*/
-        appIdElems = doc.select("#search_result_container a"); //CHECK
-        gameNameElems = doc.select("span.title");
-        photoUrlElems = doc.select("div.col.search_capsule img");
-        //priceElems = doc.select("div.col.search_price.responsive_secondrow");
-        priceElems = doc.select("div.col.search_price.responsive_secondrow");
-        //tags = get by crawling into more details of the game
-        releaseDateElems = doc.select("div.col.search_released.responsive_secondrow");//using multiple class selectors in css
+        appIdElems = getAppId(doc);
+        gameNameElems = getGameNames(doc);
+        photoUrlElems = getPhotoUrl(doc);
+        priceElems = getPrice(doc);
+        //tags = get by crawling into more details of the game?
+        releaseDateElems = getReleaseDates(doc);//using multiple class selectors in css
         //operatingSystem =
-        ratingElems = doc.select("div.col.search_reviewscore.responsive_secondrow span");
+        ratingElems = getRatings(doc);
 
-        originalPriceElems = doc.select("div.col.search_discount.responsive_secondrow");
+        //Game newGame = new Game();
 
         /*loops through every page on steam store to gather data*/
         for(int i=1; i<=5; i++) //get rid of hardcoding later. change to real number
@@ -56,31 +56,16 @@ public class Scraper
             ratingElems = getRatings(doc);
             String review = ratingElems.attr("data-store-tooltip");
 
-            //priceElems = doc.select("div.col.search_discount.responsive_secondrow");
-            priceElems = doc.select("div.col.search_price.responsive_secondrow");
-            for(Element var: priceElems)
+            //System.out.println(appIdElems.attr("data-ds-appid"));
+            //System.out.println(appIdElems.toArray().length);
+            Elements results = doc.getElementsByClass("search_result_row");
+            for(Element e: results);
             {
-
-                if(var.text().equalsIgnoreCase("Free To Play"))//free games
-                {
-                    //System.out.println(var.text());
-                }else
-                {
-                    //sale and non sale prices
-                    String[] bothPrices = var.text().split("\\s+");
-                    if(bothPrices.length == 2)//game has original and sale price
-                    {
-                        //store both prices
-                    }else//game only has original price. not on sale
-                    {
-                        //store one price
-                    }
-                }
-                //split var.text by space
-                //if(var.text().equalsIgnoreCase("Free To Play"))
+                String appid = results.attr("data-ds-appid");
+                System.out.println(appid);
             }
-
-            //System.out.println(originalPrice.text());
+            /*creates Game objects for all game information on page*/
+            createGameObjectsonPage(gameNameElems, releaseDateElems, appIdElems, photoUrlElems, ratingElems);
         }
     }
 
@@ -143,12 +128,38 @@ public class Scraper
 
     /**
      * Method getRatings gets the rating of the game on the current webpage
-     * @param webpage Webpage of the current url that contains information about steam  
-     * @return
+     * @param webpage Webpage of the current url that contains information about steam
+     * @return Elements object that holds both positive and negative ratings of game
      */
     private static Elements getRatings(Document webpage)
     {
         Elements ratings = webpage.select("div.col.search_reviewscore.responsive_secondrow span");
         return ratings;
     }
+
+    /**
+     * Method getPrice gets the price of the game on the current webpage
+     * @param webpage Webpage of the current url that contains information about steam
+     * @return Elements object that holds both the sale price and original price
+     */
+    private static Elements getPrice(Document webpage)
+    {
+        Elements price = webpage.select("div.col.search_price.responsive_secondrow");
+        return price;
+    }
+
+    /**
+     *
+     * @param gameNameElems
+     * @param releaseDateElems
+     * @param appIdElems
+     * @param photoUrlElems
+     * @param ratingElems
+     */
+    private static void  createGameObjectsonPage(Elements gameNameElems, Elements releaseDateElems, Elements appIdElems,
+                                                 Elements photoUrlElems, Elements ratingElems)
+    {
+
+    }
+
 }

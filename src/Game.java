@@ -56,6 +56,15 @@ public class Game
         return _appID;
     }
 
+
+    public String getDate() {
+        return _date;
+    }
+
+    public void setDate(String date) {
+        this._date = date;
+    }
+
     public void setAppID(String appID) {
         this._appID = appID;
     }
@@ -67,15 +76,6 @@ public class Game
     public void setName(String name) {
         this._name = name;
     }
-
-    public String getDate() {
-        return _date;
-    }
-
-    public void setDate(String date) {
-        this._date = date;
-    }
-
     public String getDiscount() {
         return _discount;
     }
