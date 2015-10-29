@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -23,12 +25,13 @@ public class Scraper
         Elements appIdElems, gameNameElems, photoUrlElems, priceElems, tagsElems, releaseDateElems, operatingSystemElems,
                 ratingElems, originalPriceElems, salePriceElems;
 
+        ArrayList<String> appIdList = new ArrayList<String>();
         String baseWebPage = "http://store.steampowered.com/search/?sort_by=&sort_order=0&page=";
         /*storing HTTP response from steam website*/
         Document doc = Jsoup.connect("http://store.steampowered.com/search/").get();
 
         /*retrieving Elements of all relevent information for initial page.*/
-        appIdElems = getAppId(doc);
+        //appIdElems = getAppId(doc);
         gameNameElems = getGameNames(doc);
         photoUrlElems = getPhotoUrl(doc);
         priceElems = getPrice(doc);
@@ -49,18 +52,19 @@ public class Scraper
             /*get Elements objects for game*/
             gameNameElems = getGameNames(doc);
             releaseDateElems = getReleaseDates(doc);
-            appIdElems = getAppId(doc);
+            appIdList = getAppId(doc);
             //String appId = appIdElems.attr("data-ds-appid");
             photoUrlElems = getPhotoUrl(doc);
             //String url = photoUrlElems.attr("src");
             ratingElems = getRatings(doc);
             String review = ratingElems.attr("data-store-tooltip");
 
-            //System.out.println(appIdElems.attr("data-ds-appid"));
-            //System.out.println(appIdElems.attr("href"));
+            /*FIX THESE AND THEN ADD TO OBJECT ARRAY*/
+            //System.out.println(photoUrlElems);
+            //System.out.println(ratingElems);
 
             /*creates Game objects for all game information on page*/
-            createGameObjectsonPage(gameNameElems, releaseDateElems, appIdElems, photoUrlElems, ratingElems);
+            //createGameObjectsonPage(gameNameElems, releaseDateElems, appIdList, photoUrlElems, ratingElems);
         }
     }
 
@@ -81,15 +85,17 @@ public class Scraper
      * @param webpage Webpage of current url that contains information about steam games
      * @return Elements object that holds all appids on the webpage
      */
-    private static Elements getAppId(Document webpage)
+    private static ArrayList<String> getAppId(Document webpage)
     {
         Elements appId = webpage.select("#search_result_container a");
-        //System.out.println(appId.attr("data-ds"));
+        ArrayList<String> ids = new ArrayList<String>();
         for(Element a: appId)
         {
-            System.out.println(a.attr("data-ds-appid"));
+            //System.out.println(a.attr("data-ds-appid"));
+            ids.add(a.attr("data-ds-appid"));
         }
-        return appId;
+        //System.out.println(ids.toString());
+        return ids;
     }
 
     /**
@@ -147,19 +153,4 @@ public class Scraper
         Elements price = webpage.select("div.col.search_price.responsive_secondrow");
         return price;
     }
-
-    /**
-     *
-     * @param gameNameElems
-     * @param releaseDateElems
-     * @param appIdElems
-     * @param photoUrlElems
-     * @param ratingElems
-     */
-    private static void  createGameObjectsonPage(Elements gameNameElems, Elements releaseDateElems, Elements appIdElems,
-                                                 Elements photoUrlElems, Elements ratingElems)
-    {
-
-    }
-
 }
