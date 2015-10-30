@@ -35,6 +35,7 @@ public class Game
         this._price = currentPrice;
         this._photoUrl = photoUrl;
     }
+
     /*
         //represents game details in ER diagram
         public Game(String appID, String gameName, String releaseDate) {
