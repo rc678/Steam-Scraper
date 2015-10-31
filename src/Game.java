@@ -8,7 +8,7 @@ public class Game
     String _date;
     String _discount;
     String _originalPrice;
-    String _price;
+    String _salePrice;
     String _photoUrl;
     String _gameUrl;
     String _rating;
@@ -21,42 +21,29 @@ public class Game
      * @param date
      * @param discount
      * @param originalPrice
-     * @param currentPrice
+     * @param salePrice
      * @param photoUrl
      */
     public Game(String appID, String gameName, String date, String discount,
-                String originalPrice, String currentPrice, String photoUrl)
+                String originalPrice, String salePrice, String photoUrl)
     {
         this._appID = appID;
         this._name = gameName;
         this._date = date;
         this._discount = discount;
         this._originalPrice = originalPrice;
-        this._price = currentPrice;
+        this._salePrice = salePrice;
         this._photoUrl = photoUrl;
     }
 
-    /*
-        //represents game details in ER diagram
-        public Game(String appID, String gameName, String releaseDate) {
+    public Game()
+    {
 
-            this._appID = appID;
-            this._name = gameName;
-            this._date = releaseDate;
-        }
+    }
 
-        //represents game details in ER diagram
-        public Game(String appID, String gameName, String releaseDate) {
-
-            this._appID = appID;
-            this._name = gameName;
-            this._date = releaseDate;
-        }
-    */
     public String getAppID() {
         return _appID;
     }
-
 
     public String getDate() {
         return _date;
@@ -93,12 +80,12 @@ public class Game
         this._originalPrice = originalPrice;
     }
 
-    public String getPrice() {
-        return _price;
+    public String getSalePrice() {
+        return _salePrice;
     }
 
-    public void setPrice(String price) {
-        this._price = price;
+    public void setSalePrice(String price) {
+        this._salePrice = price;
     }
 
     public String getPhotoUrl() {
