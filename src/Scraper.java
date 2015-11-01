@@ -3,6 +3,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,7 +14,7 @@ import org.jsoup.select.Elements;
  */
 public class Scraper {
     //HashMap where key is the appid and the value is the game information
-    public static HashMap<String, Game> steamStore = new HashMap<String, Game>();
+    protected static HashMap<String, Game> steamStore = new HashMap<String, Game>();
 
     public static void main(String[] args) throws IOException {
         /*information to be put into database*/
@@ -43,19 +44,21 @@ public class Scraper {
             photoUrlList = getPhotoUrl(doc, "");
             //System.out.println(photoUrlList.toString());
             ratingsList = getRatings(doc, "");
-            //System.out.println(ratingsList.toString());
+            System.out.println(ratingsList.toString());
             releaseDateList = getReleaseDates(doc, "");
             //System.out.println(releaseDateList.toString());
 
-            //System.out.println(appIdList.toString());
             setGameNames(doc, appIdList);
-            //System.out.println(appIdList.toString());
             setPrice(doc, appIdList);
+            setPhotoUrls(appIdList, photoUrlList);
 
-            /*creates Game objects for all game information on page*/
-            //createGameObjectsonPage(gameNameElems, releaseDateElems, appIdList, photoUrlElems, ratingElems);
         }
-        //System.out.println(steamStore.get("730").getName());
+
+        for(String key : steamStore.keySet())
+        {
+            System.out.println("Key is " + key + " Value is " + steamStore.get(key).getPhotoUrl());
+        }
+
     }
 
     /**
@@ -85,7 +88,6 @@ public class Scraper {
         ArrayList<String> ids = new ArrayList<String>();
         for (Element a : appId) {
             appIdString = a.attr("data-ds-appid");
-            //System.out.println(a.attr("data-ds-appid"));
             ids.add(appIdString);
             currGame.setAppID(appIdString);
             steamStore.put(appIdString, currGame);
@@ -101,8 +103,7 @@ public class Scraper {
      * @param appIds
      * @return Elements objects that hold all game titles on the webpage
      */
-    private static void setGameNames(Document webpage, ArrayList<String> appIds)
-    {
+    private static void setGameNames(Document webpage, ArrayList<String> appIds) {
         //Game gameInfo = new Game();
         Elements titleElements = webpage.select("span.title");
         String game;
@@ -110,10 +111,8 @@ public class Scraper {
         String appid;
         Game currGame;
 
-        System.out.println("in set games: " + appIds.toString());
-
-        for(Element e: titleElements)
-        {
+        /* loops through all games on the page*/
+        for (Element e : titleElements) {
             appid = appIds.get(pointer);
             game = e.text();
             currGame = new Game();
@@ -144,8 +143,7 @@ public class Scraper {
         String date;
         ArrayList<String> output = new ArrayList<String>();
 
-        for(Element e: dateElems)
-        {
+        for (Element e : dateElems) {
             output.add(e.text());
             //System.out.println(e.text());
         }
@@ -165,8 +163,7 @@ public class Scraper {
         ArrayList<String> urls = new ArrayList<String>();
 
         //System.out.println(photoUrls.attr("src"));
-        for(Element e: photoUrls)
-        {
+        for (Element e : photoUrls) {
             urlString = e.attr("src");
             urls.add(urlString);
             //System.out.println(urlString);
@@ -187,15 +184,12 @@ public class Scraper {
         Boolean isInitial = true;
         String finalRating = null;
         ArrayList<String> review = new ArrayList<String>();
-        for(Element e: ratings)
-        {
-            if(isInitial == true)
-            {
+        for (Element e : ratings) {
+            if (isInitial == true) {
                 //System.out.println("in addas;lksda''d");
                 isInitial = false;
                 continue;
-            }else
-            {
+            } else {
                 finalRating = e.attr("data-store-tooltip");
                 finalRating = finalRating.replaceAll("<br>", " ");
                 review.add(finalRating);
@@ -211,7 +205,7 @@ public class Scraper {
      * Method getOriginalPrice gets the price of the game on the current webpage without a sale
      *
      * @param webpage Webpage of the current url that contains information about steam
-     * @param appids List that stores the appids on the current page
+     * @param appids  List that stores the appids on the current page
      * @return Elements object that holds both the sale price and original price
      */
     private static void setPrice(Document webpage, ArrayList<String> appids) {
@@ -223,45 +217,72 @@ public class Scraper {
         Game currGame;
 
         /*Goes through all prices on web pages*/
-        for(Element e: price)
-        {
+        for (Element e : price) {
+            currGame = new Game();
             currPrice = e.text();
             currAppid = appids.get(pointer);
+            currGame.setAppID(currAppid);
+            currGame.setName(steamStore.get(currAppid).getName());
+            currGame.setRating(steamStore.get(currAppid).getRating());
+            currGame.setGameUrl(steamStore.get(currAppid).getGameUrl());
+            currGame.setDate(steamStore.get(currAppid).getDate());
+            currGame.setPhotoUrl(steamStore.get(currAppid).getPhotoUrl());
 
-            if(currPrice.equalsIgnoreCase("Free To Play")) //checks if price is labeled as Free-To-Play
+            if (currPrice.equalsIgnoreCase("Free To Play")) //checks if price is labeled as Free-To-Play
             {
-                currGame = steamStore.get(currAppid);
-                currGame.setSalePrice("0");
-                currGame.setOriginalPrice("0");
+                currGame.setSalePrice("0.00");
+                currGame.setOriginalPrice("0.00");
+                steamStore.remove(currAppid);
                 //ADD SALE PERCENT FIELD HERE. NEED TO ADD TO GAME CLASS
+                //System.out.println(currAppid + "  " + currGame.getName());
                 steamStore.put(currAppid, currGame);
-                //System.out.println(e.text());
-            }else
+            } else //checks other games that are not "Free-To-Play"
             {
                 String parts[] = currPrice.split(" ");
-                if(parts.length == 1)//
+                if (parts.length == 1)//no sale if one price is listed
                 {
-                    currGame = steamStore.get(currAppid);
-                    currGame.setSalePrice(parts[0]);
-                    currGame.setOriginalPrice(parts[0]);
+                    currGame.setSalePrice(parts[0].replace("$", ""));
+                    currGame.setOriginalPrice(parts[0].replace("$", ""));
+                    steamStore.remove(currAppid);
                     steamStore.put(currAppid, currGame);
 
-                }else if (parts.length == 2)
+                } else if (parts.length == 2)//sale price and original price stored at 0 and 1
                 {
-                    currGame = steamStore.get(currAppid);
-                    //System.out.println(currPrice);
-                    currGame.setSalePrice(parts[1]);
-                    currGame.setOriginalPrice(parts[0]);
+                    currGame.setSalePrice(parts[1].replace("$", ""));
+                    currGame.setOriginalPrice(parts[0].replace("$", ""));
+                    steamStore.remove(currAppid);
                     steamStore.put(currAppid, currGame);
-                }else
-                {
+                } else {
                     System.out.println("Error: Cannot have more than the orginal or sale price");
                 }
             }
             pointer++;
         }//end of for loop
-
     }
 
+    private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls)
+    {
+        Game currGame;
+        String url;
+        String appid;
 
+        /*goes through list of urls and adds them to global hashtable (steamStore)*/
+        for(int i = 0; i < urls.size(); i++)
+        {
+            currGame = new Game();
+            appid = appids.get(i);
+            url = urls.get(i);
+            currGame.setAppID(appid);
+            currGame.setPhotoUrl(url);
+            currGame.setDate(steamStore.get(appid).getDate());
+            currGame.setRating(steamStore.get(appid).getRating());
+            currGame.setGameUrl(steamStore.get(appid).getGameUrl());
+            currGame.setRating(steamStore.get(appid).getRating());
+            currGame.setName(steamStore.get(appid).getName());
+            currGame.setOriginalPrice(steamStore.get(appid).getOriginalPrice());
+            currGame.setSalePrice(steamStore.get(appid).getSalePrice());
+            steamStore.remove(appid);
+            steamStore.put(appid, currGame);
+        }
+    }
 }

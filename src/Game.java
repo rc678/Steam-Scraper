@@ -73,7 +73,7 @@ public class Game
     }
 
     public String getOriginalPrice() {
-        return _rating;
+        return _originalPrice;
     }
 
     public void setOriginalPrice(String originalPrice) {
