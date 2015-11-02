@@ -25,7 +25,7 @@ public class Game
      * @param photoUrl
      */
     public Game(String appID, String gameName, String date, String discount,
-                String originalPrice, String salePrice, String photoUrl)
+                String originalPrice, String salePrice, String photoUrl, String rating)
     {
         this._appID = appID;
         this._name = gameName;
@@ -34,8 +34,12 @@ public class Game
         this._originalPrice = originalPrice;
         this._salePrice = salePrice;
         this._photoUrl = photoUrl;
+        this._rating = rating;
     }
 
+    /**
+     *
+     */
     public Game()
     {
 

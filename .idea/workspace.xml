@@ -29,15 +29,11 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+            <state vertical-scroll-proportion="-14.558824">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1326#1327#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#1558#1559#0" expanded="true" />
-                <element signature="e#1703#1704#0" expanded="true" />
-                <element signature="e#1736#1737#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1186#1187#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,26 +42,10 @@
       <file leaf-file-name="Scraper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Scraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29131174">
-              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.82282794">
+              <caret line="102" column="95" selection-start-line="102" selection-start-column="95" selection-end-line="102" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-                <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-                <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-                <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-                <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-                <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-                <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-                <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-                <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-                <element signature="e#8439#8447#0" expanded="true" />
-                <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,7 +56,56 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#54151#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6252#6253#0" expanded="false" />
+                <element signature="e#6320#6321#0" expanded="false" />
+                <element signature="e#10189#10190#0" expanded="false" />
+                <element signature="e#10216#10217#0" expanded="false" />
+                <element signature="e#10398#10399#0" expanded="false" />
+                <element signature="e#10430#10431#0" expanded="false" />
+                <element signature="e#10907#10908#0" expanded="false" />
+                <element signature="e#10945#10946#0" expanded="false" />
+                <element signature="e#13541#13542#0" expanded="false" />
+                <element signature="e#13596#13597#0" expanded="false" />
+                <element signature="e#15414#15415#0" expanded="false" />
+                <element signature="e#15459#15460#0" expanded="false" />
+                <element signature="e#24549#24550#0" expanded="false" />
+                <element signature="e#24603#24604#0" expanded="false" />
+                <element signature="e#30347#30348#0" expanded="false" />
+                <element signature="e#30384#30385#0" expanded="false" />
+                <element signature="e#30684#30685#0" expanded="false" />
+                <element signature="e#30716#30717#0" expanded="false" />
+                <element signature="e#31041#31042#0" expanded="false" />
+                <element signature="e#31086#31087#0" expanded="false" />
+                <element signature="e#33262#33263#0" expanded="false" />
+                <element signature="e#33304#33305#0" expanded="false" />
+                <element signature="e#33338#33339#0" expanded="false" />
+                <element signature="e#33375#33376#0" expanded="false" />
+                <element signature="e#33413#33414#0" expanded="false" />
+                <element signature="e#33454#33455#0" expanded="false" />
+                <element signature="e#38943#38944#0" expanded="false" />
+                <element signature="e#38994#38995#0" expanded="false" />
+                <element signature="e#39436#39437#0" expanded="false" />
+                <element signature="e#39481#39482#0" expanded="false" />
+                <element signature="e#39886#39887#0" expanded="false" />
+                <element signature="e#39960#39961#0" expanded="false" />
+                <element signature="e#40600#40601#0" expanded="false" />
+                <element signature="e#40658#40659#0" expanded="false" />
+                <element signature="e#42227#42228#0" expanded="false" />
+                <element signature="e#42280#42281#0" expanded="false" />
+                <element signature="e#42326#42327#0" expanded="false" />
+                <element signature="e#42383#42384#0" expanded="false" />
+                <element signature="e#44775#44776#0" expanded="false" />
+                <element signature="e#44842#44843#0" expanded="false" />
+                <element signature="e#46390#46391#0" expanded="false" />
+                <element signature="e#46455#46456#0" expanded="false" />
+                <element signature="e#51499#51500#0" expanded="false" />
+                <element signature="e#51557#51558#0" expanded="false" />
+                <element signature="e#51597#51598#0" expanded="false" />
+                <element signature="e#51690#51691#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,8 +191,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,7 +213,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,12 +524,13 @@
       <workItem from="1446086220038" duration="7120000" />
       <workItem from="1446173973902" duration="2276000" />
       <workItem from="1446245421460" duration="5583000" />
-      <workItem from="1446317783679" duration="17545000" />
+      <workItem from="1446317783679" duration="21178000" />
+      <workItem from="1446431310527" duration="3591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70148000" />
+    <option name="totallyTimeSpent" value="77372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -510,11 +540,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.128125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -545,7 +575,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -557,14 +587,10 @@
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="21" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -575,22 +601,63 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54151#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6252#6253#0" expanded="false" />
+            <element signature="e#6320#6321#0" expanded="false" />
+            <element signature="e#10189#10190#0" expanded="false" />
+            <element signature="e#10216#10217#0" expanded="false" />
+            <element signature="e#10398#10399#0" expanded="false" />
+            <element signature="e#10430#10431#0" expanded="false" />
+            <element signature="e#10907#10908#0" expanded="false" />
+            <element signature="e#10945#10946#0" expanded="false" />
+            <element signature="e#13541#13542#0" expanded="false" />
+            <element signature="e#13596#13597#0" expanded="false" />
+            <element signature="e#15414#15415#0" expanded="false" />
+            <element signature="e#15459#15460#0" expanded="false" />
+            <element signature="e#24549#24550#0" expanded="false" />
+            <element signature="e#24603#24604#0" expanded="false" />
+            <element signature="e#30347#30348#0" expanded="false" />
+            <element signature="e#30384#30385#0" expanded="false" />
+            <element signature="e#30684#30685#0" expanded="false" />
+            <element signature="e#30716#30717#0" expanded="false" />
+            <element signature="e#31041#31042#0" expanded="false" />
+            <element signature="e#31086#31087#0" expanded="false" />
+            <element signature="e#33262#33263#0" expanded="false" />
+            <element signature="e#33304#33305#0" expanded="false" />
+            <element signature="e#33338#33339#0" expanded="false" />
+            <element signature="e#33375#33376#0" expanded="false" />
+            <element signature="e#33413#33414#0" expanded="false" />
+            <element signature="e#33454#33455#0" expanded="false" />
+            <element signature="e#38943#38944#0" expanded="false" />
+            <element signature="e#38994#38995#0" expanded="false" />
+            <element signature="e#39436#39437#0" expanded="false" />
+            <element signature="e#39481#39482#0" expanded="false" />
+            <element signature="e#39886#39887#0" expanded="false" />
+            <element signature="e#39960#39961#0" expanded="false" />
+            <element signature="e#40600#40601#0" expanded="false" />
+            <element signature="e#40658#40659#0" expanded="false" />
+            <element signature="e#42227#42228#0" expanded="false" />
+            <element signature="e#42280#42281#0" expanded="false" />
+            <element signature="e#42326#42327#0" expanded="false" />
+            <element signature="e#42383#42384#0" expanded="false" />
+            <element signature="e#44775#44776#0" expanded="false" />
+            <element signature="e#44842#44843#0" expanded="false" />
+            <element signature="e#46390#46391#0" expanded="false" />
+            <element signature="e#46455#46456#0" expanded="false" />
+            <element signature="e#51499#51500#0" expanded="false" />
+            <element signature="e#51557#51558#0" expanded="false" />
+            <element signature="e#51597#51598#0" expanded="false" />
+            <element signature="e#51690#51691#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -600,12 +667,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Scraper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -616,22 +700,6 @@
           <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -641,12 +709,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,22 +721,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -682,12 +730,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,22 +742,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -723,12 +751,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,22 +763,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -764,12 +772,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -780,22 +784,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -805,12 +793,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,22 +805,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -846,12 +814,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -862,22 +826,6 @@
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,12 +835,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -903,22 +847,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -928,12 +856,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -944,22 +868,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -996,47 +904,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#54151#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6252#6253#0" expanded="false" />
+            <element signature="e#6320#6321#0" expanded="false" />
+            <element signature="e#10189#10190#0" expanded="false" />
+            <element signature="e#10216#10217#0" expanded="false" />
+            <element signature="e#10398#10399#0" expanded="false" />
+            <element signature="e#10430#10431#0" expanded="false" />
+            <element signature="e#10907#10908#0" expanded="false" />
+            <element signature="e#10945#10946#0" expanded="false" />
+            <element signature="e#13541#13542#0" expanded="false" />
+            <element signature="e#13596#13597#0" expanded="false" />
+            <element signature="e#15414#15415#0" expanded="false" />
+            <element signature="e#15459#15460#0" expanded="false" />
+            <element signature="e#24549#24550#0" expanded="false" />
+            <element signature="e#24603#24604#0" expanded="false" />
+            <element signature="e#30347#30348#0" expanded="false" />
+            <element signature="e#30384#30385#0" expanded="false" />
+            <element signature="e#30684#30685#0" expanded="false" />
+            <element signature="e#30716#30717#0" expanded="false" />
+            <element signature="e#31041#31042#0" expanded="false" />
+            <element signature="e#31086#31087#0" expanded="false" />
+            <element signature="e#33262#33263#0" expanded="false" />
+            <element signature="e#33304#33305#0" expanded="false" />
+            <element signature="e#33338#33339#0" expanded="false" />
+            <element signature="e#33375#33376#0" expanded="false" />
+            <element signature="e#33413#33414#0" expanded="false" />
+            <element signature="e#33454#33455#0" expanded="false" />
+            <element signature="e#38943#38944#0" expanded="false" />
+            <element signature="e#38994#38995#0" expanded="false" />
+            <element signature="e#39436#39437#0" expanded="false" />
+            <element signature="e#39481#39482#0" expanded="false" />
+            <element signature="e#39886#39887#0" expanded="false" />
+            <element signature="e#39960#39961#0" expanded="false" />
+            <element signature="e#40600#40601#0" expanded="false" />
+            <element signature="e#40658#40659#0" expanded="false" />
+            <element signature="e#42227#42228#0" expanded="false" />
+            <element signature="e#42280#42281#0" expanded="false" />
+            <element signature="e#42326#42327#0" expanded="false" />
+            <element signature="e#42383#42384#0" expanded="false" />
+            <element signature="e#44775#44776#0" expanded="false" />
+            <element signature="e#44842#44843#0" expanded="false" />
+            <element signature="e#46390#46391#0" expanded="false" />
+            <element signature="e#46455#46456#0" expanded="false" />
+            <element signature="e#51499#51500#0" expanded="false" />
+            <element signature="e#51557#51558#0" expanded="false" />
+            <element signature="e#51597#51598#0" expanded="false" />
+            <element signature="e#51690#51691#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        <state vertical-scroll-proportion="-14.558824">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding>
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Scraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29131174">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.82282794">
+          <caret line="102" column="95" selection-start-line="102" selection-start-column="95" selection-end-line="102" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="method#connectToWebpage#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getAppId#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setGameNames#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getReleaseDates#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getPhotoUrl#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="method#getRatings#0;class#Scraper#0" expanded="false" />
-            <element signature="docComment;method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="method#setPrice#0;class#Scraper#0" expanded="false" />
-            <element signature="e#8439#8447#0" expanded="true" />
-            <element signature="method#setPhotoUrls#0;class#Scraper#0" expanded="false" />
           </folding>
         </state>
       </provider>
