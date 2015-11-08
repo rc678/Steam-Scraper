@@ -13,9 +13,9 @@ public class Game
     String _gameUrl;
     String _rating;
     String _ratingDescription;
+    String _operatingSystems;
 
     /**
-     *
      * @param appID
      * @param gameName
      * @param date
@@ -25,7 +25,7 @@ public class Game
      * @param photoUrl
      */
     public Game(String appID, String gameName, String date, String discount,
-                String originalPrice, String salePrice, String photoUrl, String rating)
+                String originalPrice, String salePrice, String photoUrl, String rating, String operatingSystems)
     {
         this._appID = appID;
         this._name = gameName;
@@ -35,6 +35,7 @@ public class Game
         this._salePrice = salePrice;
         this._photoUrl = photoUrl;
         this._rating = rating;
+        this._operatingSystems = operatingSystems;
     }
 
     /**
@@ -115,6 +116,10 @@ public class Game
     public void setRating(String rating) {
         this._rating = rating;
     }
+
+    public String getOperatingSystems() { return this._operatingSystems; }
+
+    public void setOperatingSystems(String operatingSystesm){ this._operatingSystems = operatingSystesm; }
 
     public String getRatingDescription() {
         return _ratingDescription;

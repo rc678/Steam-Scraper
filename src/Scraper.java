@@ -3,6 +3,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
+import jxl.write.WriteException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,7 +17,7 @@ public class Scraper {
     //HashMap where key is the appid and the value is the game information
     protected static HashMap<String, Game> steamStore = new HashMap<String, Game>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, WriteException {
         /*information to be put into database*/
         Elements appIdElems, gameNameElems, photoUrlElems, tagsElems, releaseDateElems, operatingSystemElems,
                 ratingElems, originalPriceElems, salePriceElems;
@@ -32,7 +34,7 @@ public class Scraper {
         int lastPageNum = getLastPageNum(doc);
 
         /*loops through every page on steam store to gather data*/
-        for (int i = 1; i <= 1  ; i++) //get rid of hardcoding later. change to real number
+        for (int i = 1; i <= 4  ; i++) //get rid of hardcoding later. change to real number
         {
             System.out.println("in loop");
             String link = baseWebPage + String.valueOf(i);
@@ -54,12 +56,23 @@ public class Scraper {
         }
 
         /*view hashtable for testing*/
-        /*
+
         for(String key : steamStore.keySet())
         {
-            System.out.println("Key is " + key + " Value is " + steamStore.get(key).getRating());
+            System.out.println("Key is:   " + key);
+            System.out.println("Game name is: " + steamStore.get(key).getName());
+            System.out.println("Appid:   " + steamStore.get(key).getAppID());
+            System.out.println("Rating:   " + steamStore.get(key).getRating());
+            System.out.println("Date:   " + steamStore.get(key).getDate());
+            System.out.println("Original Price:   " + steamStore.get(key).getOriginalPrice());
+            System.out.println("Sale Price:    " + steamStore.get(key).getSalePrice());
+            //System.out.println("Game Url:    " + steamStore.get(key).getGameUrl());
+            System.out.println("Photo Url:   " + steamStore.get(key).getPhotoUrl());
+            //System.out.println("" + steamStore.get(key).);
         }
-        */
+
+
+        new SteamWorkbook().writeStoreInfoDatabase();
 
 
     }
@@ -295,6 +308,11 @@ public class Scraper {
         }//end of for loop
     }
 
+    /**
+     * Sets the photoUrl in the appropriate object in the hashtable
+     * @param appids
+     * @param urls
+     */
     private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls)
     {
         Game currGame;
@@ -372,4 +390,10 @@ public class Scraper {
             steamStore.put(appid, currGame);
         }
     }
+
+    public static HashMap<String, Game> getSteamStore()
+    {
+        return steamStore;
+    }
+
 }
