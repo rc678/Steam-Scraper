@@ -56,7 +56,6 @@ public class Scraper {
         }
 
         /*view hashtable for testing*/
-
         for(String key : steamStore.keySet())
         {
             System.out.println("Key is:   " + key);
