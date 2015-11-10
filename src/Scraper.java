@@ -1,9 +1,7 @@
 import java.io.IOException;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-
+import java.util.*;
+import java.util.Map.Entry;
 import jxl.write.WriteException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -53,22 +51,26 @@ public class Scraper {
             setReleaseDate(appIdList, releaseDateList);
             //System.out.println(ratingsList.toString());
             setRatings(appIdList, ratingsList);
+            setSalePercent(appIdList);
         }
+
 
         /*view hashtable for testing*/
         for(String key : steamStore.keySet())
         {
             System.out.println("Key is:   " + key);
             System.out.println("Game name is: " + steamStore.get(key).getName());
-            System.out.println("Appid:   " + steamStore.get(key).getAppID());
+            //System.out.println("Appid:   " + steamStore.get(key).getAppID());
             System.out.println("Rating:   " + steamStore.get(key).getRating());
             System.out.println("Date:   " + steamStore.get(key).getDate());
             System.out.println("Original Price:   " + steamStore.get(key).getOriginalPrice());
             System.out.println("Sale Price:    " + steamStore.get(key).getSalePrice());
             //System.out.println("Game Url:    " + steamStore.get(key).getGameUrl());
             System.out.println("Photo Url:   " + steamStore.get(key).getPhotoUrl());
+            System.out.println("Percent Discount:" + steamStore.get(key).getDiscount());
             //System.out.println("" + steamStore.get(key).);
         }
+
 
 
         new SteamWorkbook().writeStoreInfoDatabase();
@@ -281,7 +283,6 @@ public class Scraper {
                 currGame.setSalePrice("0.00");
                 currGame.setOriginalPrice("0.00");
                 steamStore.remove(currAppid);
-                //ADD SALE PERCENT FIELD HERE. NEED TO ADD TO GAME CLASS
                 steamStore.put(currAppid, currGame);
             } else //checks other games that are not "Free-To-Play"
             {
@@ -389,6 +390,52 @@ public class Scraper {
             steamStore.put(appid, currGame);
         }
     }
+
+    /**
+     * Goes through hashtable and calculates sale percent using originalPrice and salePrice
+     */
+    private static void setSalePercent(ArrayList<String> appids)
+    {
+        Game currGame;
+        String currAppId;
+        String oPrice;
+        String sPrice;
+        String salePercent;
+        double originalPrice;
+        double salePrice;
+        double percent;
+
+        steamStore.remove("");
+        for(int i=0; i < appids.size(); i++)
+        {
+            currGame = new Game();
+            currAppId = appids.get(i);
+            oPrice = steamStore.get(currAppId).getOriginalPrice();
+            sPrice = steamStore.get(currAppId).getSalePrice();
+
+            if(oPrice.equals(sPrice))
+            {
+                salePercent = "0";
+            }else
+            {
+                originalPrice = Double.valueOf(steamStore.get(currAppId).getOriginalPrice());
+                salePrice = Double.valueOf(steamStore.get(currAppId).getSalePrice());
+                percent = Math.round( ((originalPrice-salePrice)/originalPrice) * 100 ) ;
+                salePercent = String.valueOf(percent);
+            }
+            currGame.setAppID(currAppId);
+            currGame.setDate(steamStore.get(currAppId).getDate());
+            currGame.setRating(steamStore.get(currAppId).getRating());
+            currGame.setPhotoUrl(steamStore.get(currAppId).getPhotoUrl());
+            currGame.setDiscount(salePercent);
+            currGame.setName(steamStore.get(currAppId).getName());
+            currGame.setOriginalPrice(steamStore.get(currAppId).getOriginalPrice());
+            currGame.setSalePrice(steamStore.get(currAppId).getSalePrice());
+            steamStore.remove(currAppId);
+            steamStore.put(currAppId, currGame);
+        }
+
+    }/*end of setSalePercent method*/
 
     public static HashMap<String, Game> getSteamStore()
     {
