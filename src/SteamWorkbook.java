@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
+
 import com.sun.corba.se.spi.ior.Writeable;
 import jxl.Workbook;
 import jxl.write.Label;
@@ -14,11 +15,12 @@ import jxl.write.biff.RowsExceededException;
 /**
  *
  */
-public class SteamWorkbook extends Scraper{
+public class SteamWorkbook extends Scraper {
     public Scraper currScraper = new Scraper();
 
     /**
      * Gets the most recent steam store information
+     *
      * @return
      */
     private HashMap<String, Game> getCurrSteamStore() {
@@ -40,7 +42,7 @@ public class SteamWorkbook extends Scraper{
         Label gameNameLabel = new Label(1, 0, "Game Name");
         Label releaseDateLabel = new Label(2, 0, "Release Date");
         Label discountLabel = new Label(3, 0, "Discount");
-        Label originalPriceLabel = new Label(4,0, "Original Price");
+        Label originalPriceLabel = new Label(4, 0, "Original Price");
         Label salePriceLabel = new Label(5, 0, "Sale Price");
         Label photoUrlLabel = new Label(6, 0, "Photo URL");
 
@@ -55,8 +57,7 @@ public class SteamWorkbook extends Scraper{
         int col = 0;
         int row = 1;
 
-        for(String key : steamStore.keySet())
-        {
+        for (String key : steamStore.keySet()) {
             String appid = store.get(key).getAppID();
             String name = store.get(key).getName();
             String date = store.get(key).getDate();
@@ -89,9 +90,6 @@ public class SteamWorkbook extends Scraper{
         writableWorkbook.close();
 
     }
-
-
-
 
 
 } //end of Workbook class

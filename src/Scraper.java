@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.Map.Entry;
+
 import jxl.write.WriteException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,11 +31,12 @@ public class Scraper {
         Document doc = Jsoup.connect("http://store.steampowered.com/search/").get();
 
         int lastPageNum = getLastPageNum(doc);
+        //System.out.println(lastPageNum);
 
         /*loops through every page on steam store to gather data*/
-        for (int i = 1; i <= 4  ; i++) //get rid of hardcoding later. change to real number
+        for (int i = 1; i <= lastPageNum; i++)
         {
-            System.out.println("in loop");
+            System.out.println(i);
             String link = baseWebPage + String.valueOf(i);
             doc = connectToWebpage(link);
 
@@ -56,8 +58,8 @@ public class Scraper {
 
 
         /*view hashtable for testing*/
-        for(String key : steamStore.keySet())
-        {
+        /*
+        for (String key : steamStore.keySet()) {
             System.out.println("Key is:   " + key);
             System.out.println("Game name is: " + steamStore.get(key).getName());
             //System.out.println("Appid:   " + steamStore.get(key).getAppID());
@@ -69,30 +71,24 @@ public class Scraper {
             System.out.println("Photo Url:   " + steamStore.get(key).getPhotoUrl());
             System.out.println("Percent Discount:" + steamStore.get(key).getDiscount());
             //System.out.println("" + steamStore.get(key).);
-        }
-
-
-
+        }*/
         new SteamWorkbook().writeStoreInfoDatabase();
-
-
     }
 
     /**
      * Gets the last page number in order to connect to all pages
+     *
      * @param webpage Document object containing the first page in this case
      * @return int representing the last page on the steam search app
      */
-    private static int getLastPageNum(Document webpage)
-    {
+    private static int getLastPageNum(Document webpage) {
         int lastPage = 0;
         Element last = webpage.select("div.search_pagination_right").first();
         String[] parts = last.text().split(" ");
         int i;
 
         /*loops through botton page number in an array*/
-        for(i = 0; i < parts.length; i++)
-        {
+        for (i = 0; i < parts.length; i++) {
             System.out.println("index is: " + i + " " + parts[i]);
 
         }
@@ -102,14 +98,12 @@ public class Scraper {
         String finalNum = "";
 
         /*removes unnecessary whitespace found when extracting the last page number*/
-        for(i = 0; i < lastPageNumArray.length; i++)
-        {
+        for (i = 0; i < lastPageNumArray.length; i++) {
             /*if the character is a number, then add it to the finalNum String */
-            if(lastPageNumArray[i] == '1' || lastPageNumArray[i] == '2' || lastPageNumArray[i] == '3' ||
+            if (lastPageNumArray[i] == '1' || lastPageNumArray[i] == '2' || lastPageNumArray[i] == '3' ||
                     lastPageNumArray[i] == '4' || lastPageNumArray[i] == '5' || lastPageNumArray[i] == '6'
                     || lastPageNumArray[i] == '7' || lastPageNumArray[i] == '8' || lastPageNumArray[i] == '9'
-                    || lastPageNumArray[i] == '0')
-            {
+                    || lastPageNumArray[i] == '0') {
                 finalNum = finalNum.concat(String.valueOf(lastPageNumArray[i]));
             }
         }
@@ -278,7 +272,8 @@ public class Scraper {
             currGame.setDate(steamStore.get(currAppid).getDate());
             currGame.setPhotoUrl(steamStore.get(currAppid).getPhotoUrl());
 
-            if (currPrice.equalsIgnoreCase("Free To Play")) //checks if price is labeled as Free-To-Play
+            if (currPrice.equalsIgnoreCase("Free To Play") || currPrice.equalsIgnoreCase("Play for Free!") || currPrice.contains("Play")
+                    || currPrice.contains("Free") || currPrice.equalsIgnoreCase("") || currPrice.contains("Install")) //checks if price is labeled as Free-To-Play
             {
                 currGame.setSalePrice("0.00");
                 currGame.setOriginalPrice("0.00");
@@ -301,6 +296,7 @@ public class Scraper {
                     steamStore.remove(currAppid);
                     steamStore.put(currAppid, currGame);
                 } else {
+                    System.out.println("in else");
                     System.out.println("Error: Cannot have more than the orginal or sale price");
                 }
             }
@@ -310,18 +306,17 @@ public class Scraper {
 
     /**
      * Sets the photoUrl in the appropriate object in the hashtable
+     *
      * @param appids
      * @param urls
      */
-    private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls)
-    {
+    private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls) {
         Game currGame;
         String url;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for(int i = 0; i < urls.size(); i++)
-        {
+        for (int i = 0; i < urls.size(); i++) {
             currGame = new Game();
             appid = appids.get(i);
             url = urls.get(i);
@@ -339,15 +334,13 @@ public class Scraper {
         }
     }
 
-    private static void setReleaseDate(ArrayList<String> appids, ArrayList<String> releaseDate)
-    {
+    private static void setReleaseDate(ArrayList<String> appids, ArrayList<String> releaseDate) {
         Game currGame;
         String date;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for(int i = 0; i < releaseDate.size(); i++)
-        {
+        for (int i = 0; i < releaseDate.size(); i++) {
             currGame = new Game();
             appid = appids.get(i);
             date = releaseDate.get(i);
@@ -365,15 +358,13 @@ public class Scraper {
         }
     }
 
-    private static void setRatings(ArrayList<String> appids, ArrayList<String> ratings)
-    {
+    private static void setRatings(ArrayList<String> appids, ArrayList<String> ratings) {
         Game currGame;
         String rating;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for(int i = 0; i < ratings.size(); i++)
-        {
+        for (int i = 0; i < ratings.size(); i++) {
             currGame = new Game();
             appid = appids.get(i);
             rating = ratings.get(i);
@@ -394,8 +385,7 @@ public class Scraper {
     /**
      * Goes through hashtable and calculates sale percent using originalPrice and salePrice
      */
-    private static void setSalePercent(ArrayList<String> appids)
-    {
+    private static void setSalePercent(ArrayList<String> appids) {
         Game currGame;
         String currAppId;
         String oPrice;
@@ -406,21 +396,18 @@ public class Scraper {
         double percent;
 
         steamStore.remove("");
-        for(int i=0; i < appids.size(); i++)
-        {
+        for (int i = 0; i < appids.size(); i++) {
             currGame = new Game();
             currAppId = appids.get(i);
             oPrice = steamStore.get(currAppId).getOriginalPrice();
             sPrice = steamStore.get(currAppId).getSalePrice();
 
-            if(oPrice.equals(sPrice))
-            {
+            if (oPrice.equals(sPrice) || oPrice.contains("Free")) {
                 salePercent = "0";
-            }else
-            {
+            } else {
                 originalPrice = Double.valueOf(steamStore.get(currAppId).getOriginalPrice());
                 salePrice = Double.valueOf(steamStore.get(currAppId).getSalePrice());
-                percent = Math.round( ((originalPrice-salePrice)/originalPrice) * 100 ) ;
+                percent = Math.round(((originalPrice - salePrice) / originalPrice) * 100);
                 salePercent = String.valueOf(percent);
             }
             currGame.setAppID(currAppId);
@@ -437,8 +424,7 @@ public class Scraper {
 
     }/*end of setSalePercent method*/
 
-    public static HashMap<String, Game> getSteamStore()
-    {
+    public static HashMap<String, Game> getSteamStore() {
         return steamStore;
     }
 

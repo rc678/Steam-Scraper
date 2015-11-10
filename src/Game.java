@@ -1,8 +1,7 @@
 /**
  * class contains information on games found in steam store
  */
-public class Game
-{
+public class Game {
     String _appID;
     String _name;
     String _date;
@@ -25,8 +24,7 @@ public class Game
      * @param photoUrl
      */
     public Game(String appID, String gameName, String date, String discount,
-                String originalPrice, String salePrice, String photoUrl, String rating, String operatingSystems)
-    {
+                String originalPrice, String salePrice, String photoUrl, String rating, String operatingSystems) {
         this._appID = appID;
         this._name = gameName;
         this._date = date;
@@ -41,8 +39,7 @@ public class Game
     /**
      *
      */
-    public Game()
-    {
+    public Game() {
 
     }
 
@@ -69,6 +66,7 @@ public class Game
     public void setName(String name) {
         this._name = name;
     }
+
     public String getDiscount() {
         return _discount;
     }
@@ -117,9 +115,13 @@ public class Game
         this._rating = rating;
     }
 
-    public String getOperatingSystems() { return this._operatingSystems; }
+    public String getOperatingSystems() {
+        return this._operatingSystems;
+    }
 
-    public void setOperatingSystems(String operatingSystesm){ this._operatingSystems = operatingSystesm; }
+    public void setOperatingSystems(String operatingSystesm) {
+        this._operatingSystems = operatingSystesm;
+    }
 
     public String getRatingDescription() {
         return _ratingDescription;
