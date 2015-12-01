@@ -1,7 +1,8 @@
 /**
- * class contains information on games found in steam store
+ * Game class contains information on games found in steam store
  */
-public class Game {
+public class Game
+{
     String _appID;
     String _name;
     String _date;

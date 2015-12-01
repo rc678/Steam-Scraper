@@ -12,11 +12,17 @@ import org.jsoup.select.Elements;
 /**
  * class Scraper is responsible for scraping steam web page
  */
-public class Scraper {
+public class Scraper
+{
     //HashMap where key is the appid and the value is the game information
     protected static HashMap<String, Game> steamStore = new HashMap<String, Game>();
+    protected static HashMap<String, TopSeller> steamTopSellers = new HashMap<String, TopSeller>();
+    protected static HashMap<String, OperatingSystem> gameOS = new HashMap<String, OperatingSystem>();
+    protected static HashMap<String, UpcomingGame> upcomingGames = new HashMap<String, UpcomingGame>();
+    protected static HashMap<String, SpecialGame> gameSpecials = new HashMap<String, SpecialGame>();
 
-    public static void main(String[] args) throws IOException, WriteException {
+    public static void main(String[] args) throws IOException, WriteException
+    {
         /*information to be put into database*/
         Elements appIdElems, gameNameElems, photoUrlElems, tagsElems, releaseDateElems, operatingSystemElems,
                 ratingElems, originalPriceElems, salePriceElems;
@@ -56,7 +62,6 @@ public class Scraper {
             setSalePercent(appIdList);
         }
 
-
         /*view hashtable for testing*/
         /*
         for (String key : steamStore.keySet()) {
@@ -72,7 +77,12 @@ public class Scraper {
             System.out.println("Percent Discount:" + steamStore.get(key).getDiscount());
             //System.out.println("" + steamStore.get(key).);
         }*/
+
+        new SubScraper().beginSubScraping();
+
+        //Method writes all data to an excel file
         new SteamWorkbook().writeStoreInfoDatabase();
+
     }
 
     /**
@@ -81,14 +91,16 @@ public class Scraper {
      * @param webpage Document object containing the first page in this case
      * @return int representing the last page on the steam search app
      */
-    private static int getLastPageNum(Document webpage) {
+    private static int getLastPageNum(Document webpage)
+    {
         int lastPage = 0;
         Element last = webpage.select("div.search_pagination_right").first();
         String[] parts = last.text().split(" ");
         int i;
 
         /*loops through botton page number in an array*/
-        for (i = 0; i < parts.length; i++) {
+        for (i = 0; i < parts.length; i++)
+        {
             System.out.println("index is: " + i + " " + parts[i]);
 
         }
@@ -98,12 +110,14 @@ public class Scraper {
         String finalNum = "";
 
         /*removes unnecessary whitespace found when extracting the last page number*/
-        for (i = 0; i < lastPageNumArray.length; i++) {
+        for (i = 0; i < lastPageNumArray.length; i++)
+        {
             /*if the character is a number, then add it to the finalNum String */
             if (lastPageNumArray[i] == '1' || lastPageNumArray[i] == '2' || lastPageNumArray[i] == '3' ||
                     lastPageNumArray[i] == '4' || lastPageNumArray[i] == '5' || lastPageNumArray[i] == '6'
                     || lastPageNumArray[i] == '7' || lastPageNumArray[i] == '8' || lastPageNumArray[i] == '9'
-                    || lastPageNumArray[i] == '0') {
+                    || lastPageNumArray[i] == '0')
+            {
                 finalNum = finalNum.concat(String.valueOf(lastPageNumArray[i]));
             }
         }
@@ -121,7 +135,8 @@ public class Scraper {
      * @return html page stored in a Document object
      * @throws IOException
      */
-    private static Document connectToWebpage(String url) throws IOException {
+    public static Document connectToWebpage(String url) throws IOException
+    {
         Document doc = Jsoup.connect(url).timeout(0).get();
         return doc;
     }
@@ -132,14 +147,16 @@ public class Scraper {
      * @param webpage Webpage of current url that contains information about steam games
      * @return Elements object that holds all appids on the webpage
      */
-    private static ArrayList<String> getAppId(Document webpage) {
+    private static ArrayList<String> getAppId(Document webpage)
+    {
         Elements appId = webpage.select("#search_result_container a");
         Game currGame;
         currGame = new Game();
         String appIdString;
 
         ArrayList<String> ids = new ArrayList<String>();
-        for (Element a : appId) {
+        for (Element a : appId)
+        {
             appIdString = a.attr("data-ds-appid");
             ids.add(appIdString);
             currGame.setAppID(appIdString);
@@ -155,7 +172,8 @@ public class Scraper {
      * @param appIds
      * @return Elements objects that hold all game titles on the webpage
      */
-    private static void setGameNames(Document webpage, ArrayList<String> appIds) {
+    private static void setGameNames(Document webpage, ArrayList<String> appIds)
+    {
         //Game gameInfo = new Game();
         Elements titleElements = webpage.select("span.title");
         String game;
@@ -164,7 +182,8 @@ public class Scraper {
         Game currGame;
 
         /* loops through all games on the page*/
-        for (Element e : titleElements) {
+        for (Element e : titleElements)
+        {
             appid = appIds.get(pointer);
             game = e.text();
             currGame = new Game();
@@ -190,12 +209,14 @@ public class Scraper {
      * @param s
      * @return Elements object that holds all game release dates on the webpage
      */
-    private static ArrayList<String> getReleaseDates(Document webpage, String s) {
+    private static ArrayList<String> getReleaseDates(Document webpage, String s)
+    {
         Elements dateElems = webpage.select("div.col.search_released.responsive_secondrow");
         String date;
         ArrayList<String> output = new ArrayList<String>();
 
-        for (Element e : dateElems) {
+        for (Element e : dateElems)
+        {
             date = e.text();
             output.add(date);
         }
@@ -208,12 +229,14 @@ public class Scraper {
      * @param webpage Webpage of the current url that contains information about steam games
      * @return Elements object that holds all photoUrls of the game
      */
-    private static ArrayList<String> getPhotoUrl(Document webpage) {
+    private static ArrayList<String> getPhotoUrl(Document webpage)
+    {
         Elements photoUrls = webpage.select("div.col.search_capsule img");
         String urlString;
         ArrayList<String> urls = new ArrayList<String>();
 
-        for (Element e : photoUrls) {
+        for (Element e : photoUrls)
+        {
             urlString = e.attr("src");
             urls.add(urlString);
         }
@@ -227,16 +250,20 @@ public class Scraper {
      * @param s
      * @return Elements object that holds both positive and negative ratings of game
      */
-    private static ArrayList<String> getRatings(Document webpage, String s) {
+    private static ArrayList<String> getRatings(Document webpage, String s)
+    {
         Elements ratings = webpage.select("div.col.search_reviewscore.responsive_secondrow span");
         Boolean isInitial = true;
         String finalRating = null;
         ArrayList<String> review = new ArrayList<String>();
-        for (Element e : ratings) {
-            if (isInitial == true) {
+        for (Element e : ratings)
+        {
+            if (isInitial == true)
+            {
                 isInitial = false;
                 continue;
-            } else {
+            } else
+            {
                 finalRating = e.attr("data-store-tooltip");
                 finalRating = finalRating.replaceAll("<br>", " ");
                 review.add(finalRating);
@@ -252,7 +279,8 @@ public class Scraper {
      * @param appids  List that stores the appids on the current page
      * @return Elements object that holds both the sale price and original price
      */
-    private static void setPrice(Document webpage, ArrayList<String> appids) {
+    private static void setPrice(Document webpage, ArrayList<String> appids)
+    {
         Elements price = webpage.select("div.col.search_price.responsive_secondrow");
         ArrayList<String> output = new ArrayList<String>();
         String currPrice;
@@ -261,7 +289,8 @@ public class Scraper {
         Game currGame;
 
         /*Goes through all prices on web pages*/
-        for (Element e : price) {
+        for (Element e : price)
+        {
             currGame = new Game();
             currPrice = e.text();
             currAppid = appids.get(pointer);
@@ -310,13 +339,15 @@ public class Scraper {
      * @param appids
      * @param urls
      */
-    private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls) {
+    private static void setPhotoUrls(ArrayList<String> appids, ArrayList<String> urls)
+    {
         Game currGame;
         String url;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for (int i = 0; i < urls.size(); i++) {
+        for (int i = 0; i < urls.size(); i++)
+        {
             currGame = new Game();
             appid = appids.get(i);
             url = urls.get(i);
@@ -334,13 +365,15 @@ public class Scraper {
         }
     }
 
-    private static void setReleaseDate(ArrayList<String> appids, ArrayList<String> releaseDate) {
+    private static void setReleaseDate(ArrayList<String> appids, ArrayList<String> releaseDate)
+    {
         Game currGame;
         String date;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for (int i = 0; i < releaseDate.size(); i++) {
+        for (int i = 0; i < releaseDate.size(); i++)
+        {
             currGame = new Game();
             appid = appids.get(i);
             date = releaseDate.get(i);
@@ -358,13 +391,15 @@ public class Scraper {
         }
     }
 
-    private static void setRatings(ArrayList<String> appids, ArrayList<String> ratings) {
+    private static void setRatings(ArrayList<String> appids, ArrayList<String> ratings)
+    {
         Game currGame;
         String rating;
         String appid;
 
         /*goes through list of urls and adds them to global hashtable (steamStore)*/
-        for (int i = 0; i < ratings.size(); i++) {
+        for (int i = 0; i < ratings.size(); i++)
+        {
             currGame = new Game();
             appid = appids.get(i);
             rating = ratings.get(i);
@@ -385,7 +420,8 @@ public class Scraper {
     /**
      * Goes through hashtable and calculates sale percent using originalPrice and salePrice
      */
-    private static void setSalePercent(ArrayList<String> appids) {
+    private static void setSalePercent(ArrayList<String> appids)
+    {
         Game currGame;
         String currAppId;
         String oPrice;
@@ -396,15 +432,18 @@ public class Scraper {
         double percent;
 
         steamStore.remove("");
-        for (int i = 0; i < appids.size(); i++) {
+        for (int i = 0; i < appids.size(); i++)
+        {
             currGame = new Game();
             currAppId = appids.get(i);
             oPrice = steamStore.get(currAppId).getOriginalPrice();
             sPrice = steamStore.get(currAppId).getSalePrice();
 
-            if (oPrice.equals(sPrice) || oPrice.contains("Free")) {
+            if (oPrice.equals(sPrice) || oPrice.contains("Free"))
+            {
                 salePercent = "0";
-            } else {
+            } else
+            {
                 originalPrice = Double.valueOf(steamStore.get(currAppId).getOriginalPrice());
                 salePrice = Double.valueOf(steamStore.get(currAppId).getSalePrice());
                 percent = Math.round(((originalPrice - salePrice) / originalPrice) * 100);
@@ -424,7 +463,8 @@ public class Scraper {
 
     }/*end of setSalePercent method*/
 
-    public static HashMap<String, Game> getSteamStore() {
+    public static HashMap<String, Game> getSteamStore()
+    {
         return steamStore;
     }
 

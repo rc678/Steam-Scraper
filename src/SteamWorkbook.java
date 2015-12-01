@@ -15,7 +15,8 @@ import jxl.write.biff.RowsExceededException;
 /**
  *
  */
-public class SteamWorkbook extends Scraper {
+public class SteamWorkbook extends Scraper
+{
     public Scraper currScraper = new Scraper();
 
     /**
@@ -23,13 +24,15 @@ public class SteamWorkbook extends Scraper {
      *
      * @return
      */
-    private HashMap<String, Game> getCurrSteamStore() {
+    private HashMap<String, Game> getCurrSteamStore()
+    {
         HashMap<String, Game> currStore;
         currStore = currScraper.getSteamStore();
         return currStore;
     }
 
-    public void writeStoreInfoDatabase() throws IOException, WriteException {
+    public void writeStoreInfoDatabase() throws IOException, WriteException
+    {
         HashMap<String, Game> store = getCurrSteamStore();
 
         File output = new File("steamDatabase.xls");
@@ -57,7 +60,8 @@ public class SteamWorkbook extends Scraper {
         int col = 0;
         int row = 1;
 
-        for (String key : steamStore.keySet()) {
+        for (String key : steamStore.keySet())
+        {
             String appid = store.get(key).getAppID();
             String name = store.get(key).getName();
             String date = store.get(key).getDate();
