@@ -21,7 +21,6 @@ public class SteamWorkbook extends Scraper
 
     /**
      * Gets the most recent steam store information
-     *
      * @return
      */
     private HashMap<String, Game> getCurrSteamStore()

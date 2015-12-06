@@ -39,7 +39,11 @@ public class Scraper
         int lastPageNum = getLastPageNum(doc);
         //System.out.println(lastPageNum);
 
+        /*CALL WHEN SUBSCRAPER CLASSES ARE FINISHED*/
+        new SubScraper().beginSubScraping();
+
         /*loops through every page on steam store to gather data*/
+
         for (int i = 1; i <= lastPageNum; i++)
         {
             System.out.println(i);
@@ -62,7 +66,7 @@ public class Scraper
             setSalePercent(appIdList);
         }
 
-        /*view hashtable for testing*/
+        /*view hashmap for testing*/
         /*
         for (String key : steamStore.keySet()) {
             System.out.println("Key is:   " + key);
@@ -78,8 +82,6 @@ public class Scraper
             //System.out.println("" + steamStore.get(key).);
         }*/
 
-        new SubScraper().beginSubScraping();
-
         //Method writes all data to an excel file
         new SteamWorkbook().writeStoreInfoDatabase();
 
@@ -91,7 +93,7 @@ public class Scraper
      * @param webpage Document object containing the first page in this case
      * @return int representing the last page on the steam search app
      */
-    private static int getLastPageNum(Document webpage)
+    public static int getLastPageNum(Document webpage)
     {
         int lastPage = 0;
         Element last = webpage.select("div.search_pagination_right").first();
@@ -102,7 +104,6 @@ public class Scraper
         for (i = 0; i < parts.length; i++)
         {
             System.out.println("index is: " + i + " " + parts[i]);
-
         }
 
         String[] lastPageNum = parts[4].split("\\.");
@@ -147,7 +148,7 @@ public class Scraper
      * @param webpage Webpage of current url that contains information about steam games
      * @return Elements object that holds all appids on the webpage
      */
-    private static ArrayList<String> getAppId(Document webpage)
+    public static ArrayList<String> getAppId(Document webpage)
     {
         Elements appId = webpage.select("#search_result_container a");
         Game currGame;
